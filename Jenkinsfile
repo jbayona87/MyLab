@@ -74,7 +74,7 @@ pipeline{
         //     }
         // }
 
-        // Stage 5 : Deploying
+        // Stage 5 : Deploying Jenkinsfile
         stage ("Deploy"){
             steps {
                 echo "Deploying"
@@ -84,7 +84,7 @@ pipeline{
                     sshTransfer(
                         cleanRemote: false, 
                         // excludes: '', 
-                        execCommand: 'ansible-playbook /opt/playbooks/downloa.yaml -i /opt/playbook/host', 
+                        execCommand: 'ansible-playbook /opt/playbooks/archive.yaml', 
                         execTimeout: 120000 //, 
                         // flatten: false, 
                         // makeEmptyDirs: false, 
