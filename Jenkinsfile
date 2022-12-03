@@ -82,7 +82,7 @@ pipeline{
                     sshTransfer(
                         cleanRemote: false, 
                         // excludes: '', 
-                        execCommand: 'ansible-playbook /opt/playbooks/archive.yaml', 
+                        execCommand: 'sudo ansible-playbook /opt/playbooks/archive.yaml', 
                         execTimeout: 120000 //, 
                         // flatten: false, 
                         // makeEmptyDirs: false, 
