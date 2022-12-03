@@ -9,7 +9,7 @@ pipeline{
         ArtifactId = readMavenPom().getArtifactId()
         Version = readMavenPom().getVersion()
         Name = readMavenPom().getName()
-        GrupoId = readMavenPom().getGrupoId()
+        GrupoId = readMavenPom().getGroupId()
     }
 
     stages {
