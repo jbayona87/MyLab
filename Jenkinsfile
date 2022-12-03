@@ -6,10 +6,10 @@ pipeline{
     }
 
     environment {
-        ArtifactId = readMavenPon().getArtifactId()
-        Version = readMavenPon().getVersion()
-        Name = readMavenPon().getName()
-        GrupoId = readMavenPon().getGrupoId()
+        ArtifactId = readMavenPon().getartifactId()
+        Version = readMavenPon().getversion()
+        Name = readMavenPon().getname()
+        GrupoId = readMavenPon().getgrupoId()
     }
 
     stages {
