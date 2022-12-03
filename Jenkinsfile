@@ -31,27 +31,25 @@ pipeline{
         }
 
         // Stage3 : Publish the artifacts to Nexus
-        stage ("Publish to Nexys") {
-            steps {
-                script {
-
-                    def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinayDevOpsLab-SNAPSHOT" : "VinayDevOpsLab-RELEASE"
-                    nexusArtifactUploader artifacts: 
-                    [[artifactId: "${ArtifactId}", 
-                    classifier: '', 
-                    file: "target/${ArtifactId}-${Version}.war", 
-                    type: 'war']], 
-                    credentialsId: '78304c51-8f25-4d07-b5bc-58470ecaec04', 
-                    groupId: "${GrupoId}", 
-                    nexusUrl: '172.20.10.196:8081', 
-                    nexusVersion: 'nexus3', 
-                    protocol: 'http', 
-                    repository: "${NexusRepo}", 
-                    version: "${Version}"
-                }
-                    
-            }
-        }
+        // stage ("Publish to Nexys") {
+        //     steps {
+        //         script {
+        //             def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinayDevOpsLab-SNAPSHOT" : "VinayDevOpsLab-RELEASE"
+        //             nexusArtifactUploader artifacts: 
+        //             [[artifactId: "${ArtifactId}", 
+        //             classifier: '', 
+        //             file: "target/${ArtifactId}-${Version}.war", 
+        //             type: 'war']], 
+        //             credentialsId: '78304c51-8f25-4d07-b5bc-58470ecaec04', 
+        //             groupId: "${GrupoId}", 
+        //             nexusUrl: '172.20.10.196:8081', 
+        //             nexusVersion: 'nexus3', 
+        //             protocol: 'http', 
+        //             repository: "${NexusRepo}", 
+        //             version: "${Version}"
+        //         }
+        //     }
+        // }
 
         // Stage 4 : Print some information
         stage ("Print Environment variables"){
